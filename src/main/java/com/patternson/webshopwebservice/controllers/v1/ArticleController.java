@@ -7,6 +7,10 @@ import com.patternson.webshopwebservice.services.ArticleService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ *
+ * Created by Tobias Pettersson 20180108
+ */
 @RestController
 @RequestMapping(ArticleController.BASE_URL)
 public class ArticleController {

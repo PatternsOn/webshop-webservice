@@ -1,5 +1,9 @@
 package com.patternson.webshopwebservice.services;
 
+/**
+ *
+ * Created by Tobias Pettersson 20180108
+ */
 public class ResourceNotFoundException extends RuntimeException {
 
     public ResourceNotFoundException() {

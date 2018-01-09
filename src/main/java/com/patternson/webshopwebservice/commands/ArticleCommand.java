@@ -9,6 +9,10 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
+/**
+ *
+ * Created by Tobias Pettersson 20180108
+ */
 @Getter
 @Setter
 @NoArgsConstructor

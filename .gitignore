@@ -1,4 +1,4 @@
-target/
+jstarget/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###

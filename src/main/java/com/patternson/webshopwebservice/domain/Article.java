@@ -9,6 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
+/**
+ *
+ * Created by Tobias Pettersson 20180108
+ */
 @Getter
 @Setter
 @Entity

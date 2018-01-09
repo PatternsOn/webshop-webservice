@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ *
+ * Created by Tobias Pettersson 20180108
+ */
 @Service
 public class ArticleServiceImpl implements ArticleService {
 

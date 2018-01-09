@@ -5,6 +5,10 @@ import com.patternson.webshopwebservice.domain.Article;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+/**
+ *
+ * Created by Tobias Pettersson 20180108
+ */
 @Mapper
 public interface ArticleMapper {
 

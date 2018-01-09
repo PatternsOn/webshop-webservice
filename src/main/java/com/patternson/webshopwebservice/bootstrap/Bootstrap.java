@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
+/**
+ *
+ * Created by Tobias Pettersson 20180108
+ */
 @Component
 public class Bootstrap implements CommandLineRunner {
 

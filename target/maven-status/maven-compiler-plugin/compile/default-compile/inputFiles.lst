@@ -1,0 +1,13 @@
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/services/ArticleService.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/api/v1/mapper/ArticleMapper.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/WebshopWebserviceApplication.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/controllers/RestResponseEntityExceptionHandler.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/commands/ArticleCommand.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/services/ArticleServiceImpl.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/controllers/v1/ArticleController.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/services/ResourceNotFoundException.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/domain/Article.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/bootstrap/Bootstrap.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/api/v1/model/ArticleDTO.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/repositories/ArticleRepository.java
+/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/api/v1/model/ArticleListDTO.java

@@ -4,6 +4,10 @@ import com.patternson.webshopwebservice.api.v1.model.ArticleDTO;
 
 import java.util.List;
 
+/**
+ *
+ * Created by Tobias Pettersson 20180108
+ */
 public interface ArticleService {
 
     List<ArticleDTO> getAllArticles();
