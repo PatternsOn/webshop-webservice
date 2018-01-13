@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  *
- * Created by Tobias Pettersson 20180113
+ * created by Tobias Pettersson 20180113
  */
 @Slf4j
 @RestController
