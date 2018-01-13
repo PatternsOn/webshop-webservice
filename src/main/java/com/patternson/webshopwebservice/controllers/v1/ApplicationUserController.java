@@ -31,7 +31,7 @@ public class ApplicationUserController {
         return new ApplicationUserListDTO(applicationUserService.getAllApplicationUsers());
     }
 
-    @GetMapping
+    @GetMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
     public ApplicationUserDTO getApplicationUserById(@PathVariable Long id) {
         return applicationUserService.getApplicationUserById(id);
