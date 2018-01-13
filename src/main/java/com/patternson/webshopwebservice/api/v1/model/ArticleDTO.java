@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 /**
@@ -16,6 +17,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class ArticleDTO {
 
+
+    @Size(min = 2, max = 20)
     private String name;
     private String description;
     private BigDecimal price;

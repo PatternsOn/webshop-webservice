@@ -1,16 +1,19 @@
 package com.patternson.webshopwebservice.controllers.v1;
 
-
 import com.patternson.webshopwebservice.api.v1.model.ArticleDTO;
 import com.patternson.webshopwebservice.api.v1.model.ArticleListDTO;
 import com.patternson.webshopwebservice.services.ArticleService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  *
  * Created by Tobias Pettersson 20180108
  */
+@Slf4j
 @RestController
 @RequestMapping(ArticleController.BASE_URL)
 public class ArticleController {
@@ -37,7 +40,7 @@ public class ArticleController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ArticleDTO createNewArticle(@RequestBody ArticleDTO articleDTO) {
+    public ArticleDTO createNewArticle(@Valid @RequestBody ArticleDTO articleDTO) {
         return articleService.createNewArticle(articleDTO);
     }
 

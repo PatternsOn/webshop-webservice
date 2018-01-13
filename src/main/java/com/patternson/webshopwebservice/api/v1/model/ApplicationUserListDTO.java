@@ -8,12 +8,12 @@ import java.util.List;
 
 /**
  *
- * Created by Tobias Pettersson 20180108
+ * Created by Tobias Pettersson 20180113
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ArticleListDTO {
+public class ApplicationUserListDTO {
 
-    List<ArticleDTO> articles;
+    List<ApplicationUserDTO> applicationUsers;
 }

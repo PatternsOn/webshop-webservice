@@ -1,9 +1,17 @@
 com/patternson/webshopwebservice/api/v1/mapper/ArticleMapper.class
 com/patternson/webshopwebservice/domain/Article.class
+com/patternson/webshopwebservice/services/ApplicationUserService.class
+com/patternson/webshopwebservice/config/SpringSecConfig.class
 com/patternson/webshopwebservice/controllers/RestResponseEntityExceptionHandler.class
+com/patternson/webshopwebservice/repositories/ApplicationUserRepository.class
+com/patternson/webshopwebservice/api/v1/mapper/ApplicationUserMapper.class
 com/patternson/webshopwebservice/api/v1/model/ArticleListDTO.class
-com/patternson/webshopwebservice/WebshopWebserviceApplication.class
-com/patternson/webshopwebservice/commands/ArticleCommand.class
+com/patternson/webshopwebservice/services/ApplicationUserServiceImpl.class
+com/patternson/webshopwebservice/api/v1/model/ApplicationUserDTO.class
+com/patternson/webshopwebservice/api/v1/model/ApplicationUserListDTO.class
+com/patternson/webshopwebservice/api/v1/mapper/ApplicationUserMapperImpl.class
+com/patternson/webshopwebservice/controllers/v1/ApplicationUserController.class
+com/patternson/webshopwebservice/domain/ApplicationUser.class
 com/patternson/webshopwebservice/repositories/ArticleRepository.class
 com/patternson/webshopwebservice/bootstrap/Bootstrap.class
 com/patternson/webshopwebservice/services/ArticleService.class
@@ -12,3 +20,4 @@ com/patternson/webshopwebservice/services/ArticleServiceImpl.class
 com/patternson/webshopwebservice/services/ResourceNotFoundException.class
 com/patternson/webshopwebservice/api/v1/mapper/ArticleMapperImpl.class
 com/patternson/webshopwebservice/api/v1/model/ArticleDTO.class
+com/patternson/webshopwebservice/WebShopWebserviceApplication.class

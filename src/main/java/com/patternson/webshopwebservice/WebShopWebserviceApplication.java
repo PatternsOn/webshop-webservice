@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Created by Tobias Pettersson 20180108
  */
 @SpringBootApplication
-public class WebshopWebserviceApplication {
+public class WebShopWebserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WebshopWebserviceApplication.class, args);
+		SpringApplication.run(WebShopWebserviceApplication.class, args);
 	}
 }

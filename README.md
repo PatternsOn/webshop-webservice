@@ -6,7 +6,7 @@ place an order. The customer should also be able to cancel the order. To place a
 account and log in. From the account the customer should be able to see the order history.
 
 There will also be an admin system where the admin should be able to list all customers and see there orders. The admin 
-can add, edit or delete articles. The admin should also be able to remove users and cancel orders.
+can add, edit or delete articles. The admin should also be able to remove applicationUsers and cancel orders.
 
 <br>
 <b>Requirments</b>
