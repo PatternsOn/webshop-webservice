@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ApplicationUserDTO {
+public class UserDTO {
 
     private String email;
     private String password;
 
-    @JsonProperty("applicationUser_url")
-    private String applicationUserUrl;
+    @JsonProperty("user_url")
+    private String userUrl;
 }

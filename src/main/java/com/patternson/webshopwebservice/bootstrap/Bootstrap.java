@@ -1,9 +1,9 @@
 package com.patternson.webshopwebservice.bootstrap;
 
-import com.patternson.webshopwebservice.domain.ApplicationUser;
+import com.patternson.webshopwebservice.domain.User;
 import com.patternson.webshopwebservice.domain.Article;
 import com.patternson.webshopwebservice.repositories.ArticleRepository;
-import com.patternson.webshopwebservice.repositories.ApplicationUserRepository;
+import com.patternson.webshopwebservice.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,11 +17,11 @@ import java.math.BigDecimal;
 public class Bootstrap implements CommandLineRunner {
 
     private final ArticleRepository articleRepository;
-    private final ApplicationUserRepository applicationUserRepository;
+    private final UserRepository userRepository;
 
-    public Bootstrap(ArticleRepository articleRepository, ApplicationUserRepository applicationUserRepository) {
+    public Bootstrap(ArticleRepository articleRepository, UserRepository userRepository) {
         this.articleRepository = articleRepository;
-        this.applicationUserRepository = applicationUserRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -58,22 +58,22 @@ public class Bootstrap implements CommandLineRunner {
     }
 
     private void loadUsers() {
-        ApplicationUser applicationUser1 = new ApplicationUser();
+        User user1 = new User();
 
-        applicationUser1.setId(1L);
-        applicationUser1.setEmail("applicationUser1@webshop.com");
-        applicationUser1.setPassword("password");
+        user1.setId(1L);
+        user1.setEmail("user1@webshop.com");
+        user1.setPassword("password");
 
-        applicationUserRepository.save(applicationUser1);
+        userRepository.save(user1);
 
-        ApplicationUser applicationUser2 = new ApplicationUser();
+        User user2 = new User();
 
-        applicationUser2.setId(2L);
-        applicationUser2.setEmail("applicationUser2@webshop.com");
-        applicationUser2.setPassword("password");
+        user2.setId(2L);
+        user2.setEmail("user2@webshop.com");
+        user2.setPassword("password");
 
-        applicationUserRepository.save(applicationUser2);
+        userRepository.save(user2);
 
-        System.out.println("Users loaded " + applicationUserRepository.count());
+        System.out.println("Users loaded " + userRepository.count());
     }
 }
