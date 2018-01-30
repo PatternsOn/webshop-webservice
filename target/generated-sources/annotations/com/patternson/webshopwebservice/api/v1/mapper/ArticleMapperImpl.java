@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2018-01-14T14:17:45+0100",
+    date = "2018-01-26T14:18:01+0100",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_152 (Oracle Corporation)"
 )
 @Component
@@ -21,6 +21,7 @@ public class ArticleMapperImpl implements ArticleMapper {
 
         ArticleDTO articleDTO = new ArticleDTO();
 
+        articleDTO.setId( article.getId() );
         articleDTO.setName( article.getName() );
         articleDTO.setDescription( article.getDescription() );
         articleDTO.setPrice( article.getPrice() );
@@ -38,6 +39,7 @@ public class ArticleMapperImpl implements ArticleMapper {
 
         Article article = new Article();
 
+        article.setId( articleDTO.getId() );
         article.setName( articleDTO.getName() );
         article.setDescription( articleDTO.getDescription() );
         article.setPrice( articleDTO.getPrice() );

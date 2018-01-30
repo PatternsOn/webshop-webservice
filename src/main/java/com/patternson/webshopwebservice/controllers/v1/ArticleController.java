@@ -46,62 +46,34 @@ public class ArticleController {
     }
 
 
-
-
-
-//    @GetMapping
-//    @JsonView(CustomerController.class)
-//    public ResponseEntity<List<Customer>>getAllCustomers(){
-//        List<Customer> customerList = customerRepository.findAll();
-//        if(customerList.size() == 0){
-//            return new ResponseEntity<List<Customer>>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<List<Customer>>(customerList, HttpStatus.OK);
-//    }
-//
-//
-
-
-//    @GetMapping
-//    @ResponseStatus(HttpStatus.OK)
-//    public ArticleListDTO getListOfArticles() {
-//        return new ArticleListDTO(articleService.getAllArticles());
-//    }
-
-
-
-
-
-
-
     @GetMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
     public ArticleDTO getArticleById(@PathVariable Long id) {
         return  articleService.getArticleById(id);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ArticleDTO createNewArticle(@Valid @RequestBody ArticleDTO articleDTO) {
         return articleService.createNewArticle(articleDTO);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
     public ArticleDTO updateArticle(@PathVariable Long id, @RequestBody ArticleDTO articleDTO) {
         return articleService.saveArticleByDTO(id, articleDTO);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @PatchMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
     public ArticleDTO patchArticle(@PathVariable Long id, @RequestBody ArticleDTO articleDTO) {
         return articleService.patchArticle(id, articleDTO);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
     public void deleteArticle(@PathVariable Long id) {

@@ -15,7 +15,6 @@
 /Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/repositories/UserRepository.java
 /Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/services/UserService.java
 /Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/domain/Article.java
-/Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/bootstrap/Bootstrap.java
 /Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/services/UserServiceImpl.java
 /Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/api/v1/model/ArticleDTO.java
 /Users/tobiaspettersson/IdeaProjects/webshop-webservice/src/main/java/com/patternson/webshopwebservice/repositories/ArticleRepository.java

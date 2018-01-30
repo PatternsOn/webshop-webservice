@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
@@ -16,13 +19,26 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ArticleDTO {
+    private Long id;
 
-
-    @Size(min = 2, max = 20)
+    @NotBlank
+    @Size(min = 2, max = 50)
     private String name;
+
+    @NotBlank
+    @Size(min = 2, max = 200)
     private String description;
+
+    @Min(0)
+    @Max(9999999)
     private BigDecimal price;
+
+    @NotBlank
+    @Size(min = 2, max = 50)
     private String company;
+
+    @Min(0)
+    @Max(9999)
     private Integer stock;
 
     @JsonProperty("article_url")

@@ -3,7 +3,6 @@ package com.patternson.webshopwebservice.domain;
 import javax.persistence.*;
 import java.util.Set;
 
-
 @Entity
 public class User {
 

@@ -21,7 +21,6 @@ com/patternson/webshopwebservice/api/v1/mapper/UserMapperImpl.class
 com/patternson/webshopwebservice/domain/CustomUserDetails.class
 com/patternson/webshopwebservice/controllers/v1/UserController.class
 com/patternson/webshopwebservice/repositories/ArticleRepository.class
-com/patternson/webshopwebservice/bootstrap/Bootstrap.class
 com/patternson/webshopwebservice/services/ArticleServiceImpl.class
 com/patternson/webshopwebservice/api/v1/model/ArticleDTO.class
 com/patternson/webshopwebservice/api/v1/mapper/UserMapper.class
