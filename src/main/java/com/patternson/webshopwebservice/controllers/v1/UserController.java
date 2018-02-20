@@ -6,6 +6,7 @@ import com.patternson.webshopwebservice.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -26,6 +27,20 @@ public class UserController {
         this.userService = userService;
     }
 
+
+
+    @PostMapping("/sign-up")
+    public void signUp(@RequestBody UserDTO userDTO) {
+        System.out.println("Inne i sign-up" + "\n" +
+        userDTO.getPassword() + "\n" +
+        userDTO.getEmail() + "\n" +
+        userDTO.getLastName()  + "\n" +
+        userDTO.getFirstName());
+//        userDTO.getRoles());
+
+        userService.createNewUser(userDTO);
+    }
+
 //    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
@@ -33,7 +48,7 @@ public class UserController {
         return new UserListDTO(userService.getAllUsers());
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
     public UserDTO getUserById(@PathVariable Long id) {
@@ -47,21 +62,21 @@ public class UserController {
         return userService.createNewUser(userDTO);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
     public UserDTO updateUser(@PathVariable Long id, @RequestBody UserDTO userDTO) {
         return userService.saveUserByDTO(id, userDTO);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @PatchMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
     public UserDTO patchUser(@PathVariable Long id, @RequestBody UserDTO userDTO) {
         return userService.patchUser(id, userDTO);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
     public void deleteUser(@PathVariable Long id) {

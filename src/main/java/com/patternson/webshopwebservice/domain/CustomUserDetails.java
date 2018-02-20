@@ -7,11 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-public class    CustomUserDetails extends User implements UserDetails {
-
-    public CustomUserDetails(final User user) {
-        super(user);
-    }
+public class CustomUserDetails extends ApplicationUser implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

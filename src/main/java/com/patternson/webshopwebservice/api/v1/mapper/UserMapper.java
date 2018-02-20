@@ -1,7 +1,7 @@
 package com.patternson.webshopwebservice.api.v1.mapper;
 
 import com.patternson.webshopwebservice.api.v1.model.UserDTO;
-import com.patternson.webshopwebservice.domain.User;
+import com.patternson.webshopwebservice.domain.ApplicationUser;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -14,7 +14,7 @@ public interface UserMapper {
 
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
-    UserDTO userToUserDTO(User user);
+    UserDTO userToUserDTO(ApplicationUser applicationUser);
 
-    User userDtoToUser(UserDTO userDTO);
+    ApplicationUser userDtoToUser(UserDTO userDTO);
 }

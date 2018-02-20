@@ -1,30 +1,35 @@
 package com.patternson.webshopwebservice.services;
 
 import com.patternson.webshopwebservice.api.v1.mapper.UserMapper;
+//import com.patternson.webshopwebservice.api.v1.model.RoleDTO;
 import com.patternson.webshopwebservice.api.v1.model.UserDTO;
 import com.patternson.webshopwebservice.controllers.v1.UserController;
-import com.patternson.webshopwebservice.domain.User;
+import com.patternson.webshopwebservice.domain.ApplicationUser;
 import com.patternson.webshopwebservice.exceptions.ResourceNotFoundException;
-import com.patternson.webshopwebservice.repositories.UserRepository;
+import com.patternson.webshopwebservice.repositories.ApplicationUserRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     private final UserMapper userMapper;
-    private final UserRepository userRepository;
+    private final ApplicationUserRepository applicationUserRepository;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public UserServiceImpl(UserMapper userMapper, UserRepository userRepository) {
+    public UserServiceImpl(UserMapper userMapper, ApplicationUserRepository applicationUserRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userMapper = userMapper;
-        this.userRepository = userRepository;
+        this.applicationUserRepository = applicationUserRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     @Override
     public List<UserDTO> getAllUsers() {
-        return userRepository
+        return applicationUserRepository
                 .findAll()
                 .stream()
                 .map(user -> {
@@ -37,7 +42,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO getUserById(Long id) {
-        return userRepository
+        return applicationUserRepository
                 .findById(id)
                 .map(userMapper::userToUserDTO)
                 .map(userDTO -> {
@@ -50,30 +55,40 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO createNewUser(UserDTO userDTO) {
+        userDTO.setPassword(bCryptPasswordEncoder.encode(userDTO.getPassword()));
+
+        System.out.println("Inne i create new user" + "\n" +
+                userDTO.getPassword() + "\n" +
+                userDTO.getEmail() + "\n" +
+                userDTO.getLastName()  + "\n" +
+                userDTO.getFirstName());
+//                userDTO.getRoles());
+
+
         return saveAndReturnDTO(userMapper.userDtoToUser(userDTO));
     }
 
-    private UserDTO saveAndReturnDTO(User user) {
-        User savedUser = userRepository.save(user);
+    private UserDTO saveAndReturnDTO(ApplicationUser applicationUser) {
+        ApplicationUser savedApplicationUser = applicationUserRepository.save(applicationUser);
 
-        UserDTO returnDTO = userMapper.userToUserDTO(savedUser);
+        UserDTO returnDTO = userMapper.userToUserDTO(savedApplicationUser);
 
-        returnDTO.setUserUrl(getUserUrl(savedUser.getId()));
+        returnDTO.setUserUrl(getUserUrl(savedApplicationUser.getId()));
 
         return returnDTO;
     }
 
     @Override
     public UserDTO saveUserByDTO(Long id, UserDTO userDTO) {
-        User user = userMapper.userDtoToUser(userDTO);
-        user.setId(id);
+        ApplicationUser applicationUser = userMapper.userDtoToUser(userDTO);
+        applicationUser.setId(id);
 
-        return saveAndReturnDTO(user);
+        return saveAndReturnDTO(applicationUser);
     }
 
     @Override
     public UserDTO patchUser(Long id, UserDTO userDTO) {
-        return userRepository
+        return applicationUserRepository
                 .findById(id)
                 .map(user -> {
                     if (userDTO.getEmail() != null) {
@@ -83,7 +98,7 @@ public class UserServiceImpl implements UserService {
                         user.setPassword(userDTO.getPassword());
                     }
 
-                    UserDTO returnDTO = userMapper.userToUserDTO(userRepository.save(user));
+                    UserDTO returnDTO = userMapper.userToUserDTO(applicationUserRepository.save(user));
 
 
                     returnDTO.setUserUrl(getUserUrl(id));
@@ -98,6 +113,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUserById(Long id) {
-        userRepository.deleteById(id);
+        applicationUserRepository.deleteById(id);
     }
 }

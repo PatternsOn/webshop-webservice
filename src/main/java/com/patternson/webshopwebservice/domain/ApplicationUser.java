@@ -3,8 +3,9 @@ package com.patternson.webshopwebservice.domain;
 import javax.persistence.*;
 import java.util.Set;
 
+@Table(name = "user")
 @Entity
-public class User {
+public class ApplicationUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,18 +21,18 @@ public class User {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    public User() {
+    public ApplicationUser() {
     }
 
-    public User(User user) {
-        this.active = user.getActive();
-        this.email = user.getEmail();
-        this.roles = user.getRoles();
-        this.firstName = user.getFirstName();
-        this.lastName =user.getLastName();
-        this.id = user.getId();
-        this.password = user.getPassword();
-    }
+//    public ApplicationUser(ApplicationUser applicationUser) {
+//        this.active = applicationUser.getActive();
+//        this.email = applicationUser.getEmail();
+//        this.roles = applicationUser.getRoles();
+//        this.firstName = applicationUser.getFirstName();
+//        this.lastName = applicationUser.getLastName();
+//        this.id = applicationUser.getId();
+//        this.password = applicationUser.getPassword();
+//    }
 
     public Long getId() {
         return id;
