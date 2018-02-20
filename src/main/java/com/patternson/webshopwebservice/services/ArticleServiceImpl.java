@@ -4,6 +4,7 @@ import com.patternson.webshopwebservice.api.v1.mapper.ArticleMapper;
 import com.patternson.webshopwebservice.api.v1.model.ArticleDTO;
 import com.patternson.webshopwebservice.controllers.v1.ArticleController;
 import com.patternson.webshopwebservice.domain.Article;
+import com.patternson.webshopwebservice.exceptions.ResourceNotFoundException;
 import com.patternson.webshopwebservice.repositories.ArticleRepository;
 import org.springframework.stereotype.Service;
 

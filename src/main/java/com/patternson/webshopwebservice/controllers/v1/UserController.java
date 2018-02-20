@@ -26,7 +26,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public UserListDTO getListOfUsers() {
@@ -40,7 +40,7 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+//    @PreAuthorize("hasAnyRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO createNewUser(@RequestBody UserDTO userDTO) {

@@ -1,6 +1,6 @@
 package com.patternson.webshopwebservice.controllers;
 
-import com.patternson.webshopwebservice.services.ResourceNotFoundException;
+import com.patternson.webshopwebservice.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -4,6 +4,7 @@ import com.patternson.webshopwebservice.api.v1.mapper.UserMapper;
 import com.patternson.webshopwebservice.api.v1.model.UserDTO;
 import com.patternson.webshopwebservice.controllers.v1.UserController;
 import com.patternson.webshopwebservice.domain.User;
+import com.patternson.webshopwebservice.exceptions.ResourceNotFoundException;
 import com.patternson.webshopwebservice.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 

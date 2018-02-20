@@ -1,4 +1,4 @@
-package com.patternson.webshopwebservice.services;
+package com.patternson.webshopwebservice.exceptions;
 
 /**
  *
