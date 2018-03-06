@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
@@ -21,11 +20,9 @@ import java.math.BigDecimal;
 public class ArticleDTO {
     private Long id;
 
-    @NotBlank
     @Size(min = 2, max = 50)
     private String name;
 
-    @NotBlank
     @Size(min = 2, max = 200)
     private String description;
 
@@ -33,7 +30,6 @@ public class ArticleDTO {
     @Max(9999999)
     private BigDecimal price;
 
-    @NotBlank
     @Size(min = 2, max = 50)
     private String company;
 

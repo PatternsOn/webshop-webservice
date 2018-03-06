@@ -1,8 +1,6 @@
 package com.patternson.webshopwebservice.controllers.v1;
 
-import com.fasterxml.jackson.annotation.JsonView;
 import com.patternson.webshopwebservice.api.v1.model.ArticleDTO;
-import com.patternson.webshopwebservice.api.v1.model.ArticleListDTO;
 import com.patternson.webshopwebservice.services.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -10,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.PermitAll;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -32,6 +31,7 @@ public class ArticleController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
+    @PermitAll
     public ResponseEntity<List<ArticleDTO>> getListOfArticles() {
         List<ArticleDTO> articleListDTO = articleService.getAllArticles();
 
@@ -48,34 +48,35 @@ public class ArticleController {
 
     @GetMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
+    @PermitAll
     public ArticleDTO getArticleById(@PathVariable Long id) {
         return  articleService.getArticleById(id);
     }
 
-//    @PreAuthorize("hasAnyRole('ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     public ArticleDTO createNewArticle(@Valid @RequestBody ArticleDTO articleDTO) {
         return articleService.createNewArticle(articleDTO);
     }
 
-//    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     public ArticleDTO updateArticle(@PathVariable Long id, @RequestBody ArticleDTO articleDTO) {
         return articleService.saveArticleByDTO(id, articleDTO);
     }
 
-//    @PreAuthorize("hasAnyRole('ADMIN')")
     @PatchMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     public ArticleDTO patchArticle(@PathVariable Long id, @RequestBody ArticleDTO articleDTO) {
         return articleService.patchArticle(id, articleDTO);
     }
 
-//    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping({"/{id}"})
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     public void deleteArticle(@PathVariable Long id) {
         articleService.deleteArticleById(id);
     }
